@@ -67,6 +67,7 @@ zone.addEventListener("drop", async e => {
 
     // console.log("File meta:", meta);
     console.log("File content:", content);
+    document.querySelector('#textinput').value = content;
 });
 
 titleText = title.innerHTML.split('')
