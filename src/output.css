@@ -259,20 +259,8 @@
   .h-50 {
     height: calc(var(--spacing) * 50);
   }
-  .h-60 {
-    height: calc(var(--spacing) * 60);
-  }
-  .h-75 {
-    height: calc(var(--spacing) * 75);
-  }
   .h-\[8vh\] {
     height: 8vh;
-  }
-  .h-\[300px\] {
-    height: 300px;
-  }
-  .h-auto {
-    height: auto;
   }
   .h-full {
     height: 100%;
@@ -280,11 +268,11 @@
   .h-screen {
     height: 100vh;
   }
-  .w-2xl {
-    width: var(--container-2xl);
+  .max-h-\[40vh\] {
+    max-height: 40vh;
   }
-  .w-3xl {
-    width: var(--container-3xl);
+  .max-h-\[50vh\] {
+    max-height: 50vh;
   }
   .w-screen {
     width: 100vw;
@@ -328,6 +316,9 @@
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
+  .cursor-pointer {
+    cursor: pointer;
   }
   .cursor-text {
     cursor: text;

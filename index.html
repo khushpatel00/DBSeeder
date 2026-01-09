@@ -43,7 +43,7 @@
             </button>
         </div>
     </nav>
-    <div id="menu" class="bg-black hidden duration-150 z-50 absolute w-screen h-screen top-0 left-0 justify-center">
+    <div id="menu" class="bg-black duration-150 z-50 absolute w-screen h-screen top-0 left-0 justify-center">
 
 
 
@@ -64,13 +64,13 @@
         <div class="text-white poppins text-4xl font-semibold flex flex-col items-center justify-center h-full gap-5 duration-300">
 
             <div class="menucontent flex flex-col items-center justify-center duration-300">
-                <p class="relative anchors duration-300">HOME</p> 
+                <p class="relative anchors duration-300 cursor-pointer" onclick="return closemenu()">HOME</p> 
                 <p class="relative anchors duration-300 credits">Credits</p>
                 <div class="credits-content h-0 my-5">
                     <ul class="font-extralight tracking-widest">
-                        <li class="opacity-0 flex"><a href="https://github.com/Dharmik-Chokhaliya/" class="font-semibold text-blue-500">Dharmik Chokhaliya</a>: Team Leader</li>
-                        <li class="opacity-0 flex"><a href="https://github.com/Varshil15/" class="font-semibold text-blue-500">Varshil Nasit</a>: Backend Developer</li>
-                        <li class="opacity-0 flex"><a href="https://github.com/khushpatel00" class="font-semibold text-blue-500">Khush Patel</a>: Frontend Developer</li>
+                        <li class="opacity-0 flex"><a target="_blank" href="https://github.com/Dharmik-Chokhaliya/" class="font-semibold text-blue-500">Dharmik Chokhaliya</a>: Team Leader</li>
+                        <li class="opacity-0 flex"><a target="_blank" href="https://github.com/Varshil15/" class="font-semibold text-blue-500">Varshil Nasit</a>: Backend Developer</li>
+                        <li class="opacity-0 flex"><a target="_blank" href="https://github.com/khushpatel00" class="font-semibold text-blue-500">Khush Patel</a>: Frontend Developer</li>
                     </ul>
                 </div>
             </div>
@@ -85,12 +85,9 @@
 
         <div class="flex flex-col items-center justify-center max-w-[35vw] duration-300">
             <textarea type="text" id="textinput"
-                class="showcontent-after bg-white/30 z-30 mt-3 w-sm h-50 p-2 text-white text-lg min-w-fit rounded-xl"></textarea>
-
+                class="showcontent-after bg-white/30 z-30 mt-3 w-sm h-50 max-h-[50vh] p-2 text-white text-lg min-w-fit rounded-xl"></textarea>
             <p class="text-white text-xl showcontent-after line relative my-5">OR</p>
-
             <div class="dragdrop-zone z-10 showcontent-after" data-dragdrop>Drop files here</div>
-
             <button class="showcontent-after text-white text-xl jet mt-5 bg-white/50 px-5 py-3 rounded-lg" id="generate">Generate !</button>
         </div>
 

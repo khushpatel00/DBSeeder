@@ -86,6 +86,7 @@ gsap?.to('.showcontent-after', {
     delay: 1.8,
     stagger: 0.2
 })
+gsap.set('#menu', { display: 'none' })
 
 menubtn.addEventListener('click', () => {
     gsap.set('#menu', { display: 'flex' })
@@ -99,7 +100,12 @@ closebutton.addEventListener('click', () => {
         display: 'none'
     })
 })
-
+function closemenu(){
+    gsap.to('#menu', {
+        opacity: 0,
+        display: 'none'
+    })
+}
 anchors.forEach(element => {
     element.addEventListener('mouseover', () => {
         element.classList.add('text-black')
