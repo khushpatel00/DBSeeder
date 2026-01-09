@@ -143,3 +143,23 @@ canvas{ /* DO NOT TOUCH, {DONT EVEN DARE TO} */
 
 	background-color: white;
 }
+
+  .dragdrop-zone {
+    width: 320px;
+    height: 180px;
+    border: 2px dashed #6b7280;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    font-family: system-ui, sans-serif;
+    color: #9ca3af;
+    transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .dragdrop-zone.drag-active {
+    transform: scale(1.06);
+    border-color: #6366f1;
+    background: rgba(99, 102, 241, 0.08);
+    color: #c7d2fe;
+  }

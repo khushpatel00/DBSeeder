@@ -22,8 +22,8 @@
 <body class="bg-white dark:bg-black duration-150 overflow-x-hidden">
 
 
-    <nav class="sticky showcontent-after z-40 top-0 w-screen px-5 pe-8 h-[5vh] flex items-center justify-between">
-        <p class="text-white text-2xl jet">[icon]</p>
+    <nav class="sticky showcontent-after z-40 top-0 w-screen px-5 pe-8 h-[8vh] flex items-center justify-between">
+        <img src="src/images/favicon-96x96.png" class="scale-75" alt="">
 
         <!-- <button id="dark-toggle"
                 class="tracking-tighter absolute top-0 right-0 bg-black/10 dark:bg-white/10 dark:text-white backdrop-blur-md  px-5 py-2 font-light text-lg m-3  rounded-lg jet opacity-0 ">
@@ -31,7 +31,7 @@
                 <i class="theme-icon-light ph ph-sun"></i>
             </button> -->
 
-        <div class="flex">
+        <div class="flex mt-1">
             <button class="btn menu-btn menubutton" data-hover>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -75,16 +75,12 @@
         <p class="jet text-5xl text-white text-center font-black title flex items-center justify-center absolute z-10">
             DBSeeder</p>
 
-        <label id="drop-zone"
-            class="showcontent-after bg-white/50 px-10 py-20 rounded-2xl border border-dashed my-5 z-30">
-            <p class="text-center translate-y-1/2 text-xl poppins font-light">Drop Your Schema here</p>
-            <input type="file" name="" id="file-input" class="opacity-0">
-        </label>
-        <label for="textinput"></label>
+        <textarea type="text" id="textinput"
+            class="showcontent-after bg-white/30 z-30 mt-3 px-30 py-15 min-w-fit h-auto rounded-xl"></textarea>
 
-        <p class="text-white text-xl showcontent-after line relative ">OR</p>
+        <p class="text-white text-xl showcontent-after line relative my-5">OR</p>
 
-        <textarea type="text" id="textinput" class="showcontent-after bg-white/30 z-30 my-3 px-8 py-4 min-w-fit h-auto rounded-xl"></textarea>
+        <div class="dragdrop-zone z-10 showcontent-after" data-dragdrop>Drop files here</div>
     </section>
     <div>
 
