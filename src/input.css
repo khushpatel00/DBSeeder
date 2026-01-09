@@ -29,16 +29,16 @@ ul {
 button {
 	outline: none;
 	border: none;
-	background: inherit;
-	color: currentcolor;
-	font-size: inherit;
-	font-family: inherit;
+	/* background: inherit; */
+	/* color: currentcolor; */
+	/* font-size: inherit; */
+	/* font-family: inherit; */
 	cursor: pointer;
 }
 
 a {
 	text-decoration: none;
-	color: currentcolor;
+	/* color: currentcolor; */
 }
 
 main {
@@ -120,6 +120,7 @@ canvas{ /* DO NOT TOUCH, {DONT EVEN DARE TO} */
 }
 .anchors{
 	mix-blend-mode: difference; 
+	margin: 20px 0;
 }
 .line::after{
 	position: absolute;
@@ -145,8 +146,8 @@ canvas{ /* DO NOT TOUCH, {DONT EVEN DARE TO} */
 }
 
   .dragdrop-zone {
-    width: 320px;
-    height: 180px;
+    width: 440px;
+    height: 240px;
     border: 2px dashed #6b7280;
     border-radius: 14px;
     display: grid;

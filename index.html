@@ -61,10 +61,19 @@
             </button>
         </div>
 
-        <div class="text-white poppins text-4xl font-semibold flex flex-col items-center justify-center h-full gap-5">
-            <p class="relative anchors duration-300">HOME</p>
-            <p class="relative anchors duration-300">SCHEMAS</p>
-            <p class="relative anchors duration-300">CONTACT</p>
+        <div class="text-white poppins text-4xl font-semibold flex flex-col items-center justify-center h-full gap-5 duration-300">
+
+            <div class="menucontent flex flex-col items-center justify-center duration-300">
+                <p class="relative anchors duration-300">HOME</p> 
+                <p class="relative anchors duration-300 credits">Credits</p>
+                <div class="credits-content h-0 my-5">
+                    <ul class="font-extralight tracking-widest">
+                        <li class="opacity-0 flex"><a href="https://github.com/Dharmik-Chokhaliya/" class="font-semibold text-blue-500">Dharmik Chokhaliya</a>: Team Leader</li>
+                        <li class="opacity-0 flex"><a href="https://github.com/Varshil15/" class="font-semibold text-blue-500">Varshil Nasit</a>: Backend Developer</li>
+                        <li class="opacity-0 flex"><a href="https://github.com/khushpatel00" class="font-semibold text-blue-500">Khush Patel</a>: Frontend Developer</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -76,17 +85,19 @@
 
         <div class="flex flex-col items-center justify-center max-w-[35vw] duration-300">
             <textarea type="text" id="textinput"
-                class="showcontent-after bg-white/30 z-30 mt-3 px-30 py-15 min-w-fit h-auto rounded-xl"></textarea>
+                class="showcontent-after bg-white/30 z-30 mt-3 w-sm h-50 p-2 text-white text-lg min-w-fit rounded-xl"></textarea>
 
             <p class="text-white text-xl showcontent-after line relative my-5">OR</p>
 
             <div class="dragdrop-zone z-10 showcontent-after" data-dragdrop>Drop files here</div>
+
+            <button class="showcontent-after text-white text-xl jet mt-5 bg-white/50 px-5 py-3 rounded-lg" id="generate">Generate !</button>
         </div>
 
 
         <div class="bg-neutral-600/50 showcontent-after px-12 py-10 ps-5 rounded-xl max-w-[65vw] z-10 text-white text-3xl duration-300">
 
-           <pre> <code class="py-10 px-20"></code></pre>
+           <pre><code class="py-10 px-20" id="code"></code></pre>
         </div>
     </section>
 
@@ -98,4 +109,4 @@
     <script type="module" src="src/scripts/hoverEffects.js"></script>
 </body>
 
-</html>
+</html>5 

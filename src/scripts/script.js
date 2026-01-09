@@ -1,17 +1,16 @@
 // DOM Elements
-darkToggle = document.querySelector('#dark-toggle')
+darkToggle = document.querySelector('#dark-toggle');
 title = document.querySelector('.title');
-menubtn = document.querySelector('.menubutton')
-closebutton = document.querySelector('.closebutton')
+menubtn = document.querySelector('.menubutton');
+closebutton = document.querySelector('.closebutton');
 anchors = document.querySelectorAll('.anchors');
 dropzone = document.querySelector('#drop-zone');
 zone = document.querySelector("[data-dragdrop]");
-
+generate = document.querySelector('#generate');
 
 // global vars
 isDark = false;
 
-gsap.set('.showcontent-after', { opacity: 0 })
 // events
 darkToggle?.addEventListener('click', () => {
     document.querySelector('html').classList.toggle('dark');
@@ -19,6 +18,8 @@ darkToggle?.addEventListener('click', () => {
     document.querySelector('.theme-icon-dark').classList.toggle('hidden')
 })
 
+
+gsap.set('.showcontent-after', { opacity: 0 })
 
 zone.addEventListener("dragenter", e => {
     if (e.dataTransfer?.types?.includes("Files")) {
@@ -116,3 +117,29 @@ text = `INSERT INTO users (id, name, email) VALUES
         `
 
 document.querySelector('code').innerHTML = text;
+
+
+
+
+document.querySelector('.credits').addEventListener('mouseover', () => {
+    gsap.to('.credits-content ul li', {
+        opacity: 1,
+        y: -20,
+        stagger: 0.08,
+        delay: 0.1
+    })
+})
+document.querySelector('.menucontent').addEventListener('mouseleave', () => {
+    gsap.to('.credits-content ul li', {
+        opacity: 0,
+        y: 0,
+        stagger: 0.08
+    })
+    gsap.to('.credits', { 
+        y: 0,
+        duration: 0.1,
+        ease: 'expo.out',
+        delay: 0.5
+    })
+})
+
