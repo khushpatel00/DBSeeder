@@ -24,31 +24,49 @@ gsap.set('.showcontent-after', { opacity: 0 })
 
 zone.addEventListener("dragenter", e => {
     if (e.dataTransfer?.types?.includes("Files")) {
-        dragCounter++;
         zone.classList.add("drag-active");
     }
 });
 
 zone.addEventListener("dragover", e => {
-    e.preventDefault();
+    e.preventDefault(); // mandatory
 });
 
-zone.addEventListener("drop", e => {
+zone.addEventListener("drop", async e => {
     e.preventDefault();
     zone.classList.remove("drag-active");
-    console.log(e.dataTransfer)
+
     const files = [...e.dataTransfer.files];
-    console.log("Dropped files:", files);
+    if (!files.length) return;
 
-    const first = files?.[0];
-    if (!first) return;
+    // example: single-file handling
+    const file = files[0];
 
-    const reader = new FileReader();
-    reader.onload = () => {
-        const textArea = document.getElementById('textinput');
-        if (textArea) textArea.value = String(reader.result || '');
+    // metadata (free)
+    const meta = {
+        name: file.name,
+        size: file.size,
+        type: file.type,
+        lastModified: file.lastModified
     };
-    reader.readAsText(first);
+
+    let content;
+
+    // decision gate
+    if (file.type.startsWith("text") || file.type === "application/json") {
+        content = await file.text();           // TEXT MODE 📝
+    } else {
+        content = await file.arrayBuffer();    // BINARY MODE 🧬
+    }
+
+    // store wherever you want
+    window.droppedFile = {
+        meta,
+        content
+    };
+
+    // console.log("File meta:", meta);
+    console.log("File content:", content);
 });
 
 titleText = title.innerHTML.split('')
@@ -131,8 +149,6 @@ const codeEl = document.querySelector('code');
 if (codeEl && !codeEl.textContent?.trim()) {
     codeEl.textContent = "Your generated SQL will appear here.";
 }
-
-
 
 
 document.querySelector('.credits').addEventListener('mouseover', () => {
