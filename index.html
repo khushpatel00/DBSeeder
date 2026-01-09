@@ -28,27 +28,50 @@
         <i class="theme-icon-light ph ph-sun"></i>
     </button>
 
-    <nav class="sticky showcontent-after z-50 top-0 bg-emerald-300 w-screen px-5 pe-8 h-[5vh] flex items-center justify-between">
+    <nav
+        class="sticky showcontent-after z-50 top-0 w-screen px-5 pe-8 h-[5vh] flex items-center justify-between">
         <p class="text-white text-2xl jet">[icon]</p>
         <div class="flex">
-            <p class="text-white text-2xl jet">[menu]</p>
-            <p class="text-white text-2xl jet">[menu]</p>
+            <button class="btn menu-btn" data-hover>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" x2="20" y1="12" y2="12" />
+                <line x1="4" x2="20" y1="6" y2="6" />
+                <line x1="4" x2="20" y1="18" y2="18" />
+            </svg>
+            <div data-hover-bounds></div>
+        </button>
         </div>
     </nav>
 
-
-    <section class="h-screen w-screen absolute top-0 left-0 bg-emerald-200/50 flex flex-col items-center justify-center overflo">
+    <section
+        class="h-screen w-screen absolute top-0 left-0 bg-emerald-200/50 flex flex-col items-center justify-center overflo">
         <p class="jet text-5xl text-center font-black title flex items-center justify-center absolute z-10">DBSeeder</p>
 
         <label id="drop-zone" class="showcontent-after bg-white/50 px-10 py-20 rounded-2xl border border-dashed mt-5">
             <p class="text-center translate-y-1/2 text-xl poppins font-light">Drop Your Schema here</p>
             <input type="file" name="" id="file-input" class="opacity-0">
         </label>
-    </section> 
+    </section>
+    <div>
+        
 
+        <button class="btn close-btn" data-hover>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-x">
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+            </svg>
+            <div data-hover-bounds></div>
+        </button>
+    </div>
+
+    <div class="cursor z-50"></div>
     <script src="./src/localLibraries/gsap.min.js"></script>
     <script src="src/scripts/fetch.js"></script>
     <script src="src/scripts/script.js"></script>
+    <script type="module" src="src/scripts/hoverEffects.js"></script>
 </body>
 
 </html>
