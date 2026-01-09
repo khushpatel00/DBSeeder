@@ -1,3 +1,6 @@
-nohup: ignoring input
+
+> dbseeder@1.0.0 start
+> node index.js
+
 🚀 Backend starting...
 ✅ Backend running on http://localhost:3000

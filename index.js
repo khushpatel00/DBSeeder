@@ -1,10 +1,24 @@
+import 'dotenv/config';
 import express from "express";
 import cors from "cors";
 import { faker } from "@faker-js/faker";
+import { promises as fsPromises } from 'fs';
+import fs from 'fs';
+import path from 'path';
+import os from 'os';
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Serve frontend static files (index.html, scripts, assets) from project root
+const staticDir = path.join(process.cwd());
+app.use(express.static(staticDir));
+
+// Root route: serve index.html to ensure frontend is served from the same origin
+app.get('/', (req, res) => {
+  res.sendFile(path.join(staticDir, 'index.html'));
+});
 
 // Handle invalid JSON body parse errors from `express.json()`
 app.use((err, req, res, next) => {
