@@ -21,15 +21,15 @@
 
 <body class="bg-white dark:bg-black duration-150 overflow-x-hidden">
 
-<!-- 
-    <button id="dark-toggle"
-        class="tracking-tighter absolute top-0 right-0 bg-black/10 dark:bg-white/10 dark:text-white backdrop-blur-md  px-5 py-2 font-light text-lg m-3  rounded-lg jet opacity-0 ">
-        <i class="theme-icon-dark hidden ph ph-moon-stars"></i>
-        <i class="theme-icon-light ph ph-sun"></i>
-    </button> -->
-
+    
     <nav class="sticky showcontent-after z-40 top-0 w-screen px-5 pe-8 h-[5vh] flex items-center justify-between">
         <p class="text-white text-2xl jet">[icon]</p>
+        
+            <!-- <button id="dark-toggle"
+                class="tracking-tighter absolute top-0 right-0 bg-black/10 dark:bg-white/10 dark:text-white backdrop-blur-md  px-5 py-2 font-light text-lg m-3  rounded-lg jet opacity-0 ">
+                <i class="theme-icon-dark hidden ph ph-moon-stars"></i>
+                <i class="theme-icon-light ph ph-sun"></i>
+            </button> -->
         <div class="flex">
             <button class="btn menu-btn menubutton" data-hover>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -55,8 +55,8 @@
         </button>
 
     </div>
-    <section
-        class="h-screen w-screen absolute top-0 left-0 bg-emerald-200/50 flex flex-col items-center justify-center overflo">
+    <section id="particles-js"
+        class="h-screen w-screen absolute top-0 left-0 flex flex-col items-center justify-center overflo">
         <p class="jet text-5xl text-center font-black title flex items-center justify-center absolute z-10">DBSeeder</p>
 
         <label id="drop-zone" class="showcontent-after bg-white/50 px-10 py-20 rounded-2xl border border-dashed mt-5">
@@ -71,6 +71,7 @@
 
     <div class="cursor z-50"></div>
     <script src="./src/localLibraries/gsap.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
     <script src="src/scripts/fetch.js"></script>
     <script src="src/scripts/script.js"></script>
     <script type="module" src="src/scripts/hoverEffects.js"></script>
