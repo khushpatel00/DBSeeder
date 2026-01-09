@@ -117,11 +117,55 @@ text = `INSERT INTO users (id, name, email) VALUES
 
 document.querySelector('code').innerHTML = text;
 
-document.querySelector('.credits').addEventListener('mouseover', ()=>{
+
+
+
+document.querySelector('.contact').addEventListener('mouseover', () => {
+    gsap.set('.contact-content', {})
+    gsap.to('.contact-content ul li', {
+        opacity: 1,
+        y: -20,
+        stagger: 0.1,
+        delay: 0.1
+    })
+    gsap.to('.credits', { 
+        y: 100,
+        duration: 0.1,
+        ease: 'expo.in'
+    })
+})
+document.querySelector('.menucontent').addEventListener('mouseleave', () => {
+    gsap.to('.contact-content ul li', {
+        opacity: 0,
+        y: 0,
+        stagger: 0.1
+    })
+    gsap.to('.credits', { 
+        y: 0,
+        duration: 0.1,
+        ease: 'expo.out',
+        delay: 0.5
+    })
+})
+
+
+
+document.querySelector('.credits').addEventListener('mouseover', () => {
     gsap.to('.credits-content ul li', {
         opacity: 1,
         y: -20,
-        stagger: 0.1 
+        stagger: 0.1
+    })
+    gsap.to('.contact-content ul li', {
+        opacity: 0,
+        y: 0,
+        stagger: 0.1
+    })   
+})
+document.querySelector('.menucontent').addEventListener('mouseleave', () => {
+    gsap.to('.credits-content ul li', {
+        opacity: 0,
+        y: 0,
+        stagger: 0.1
     })
 })
-// document.querySelector
