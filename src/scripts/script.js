@@ -20,24 +20,24 @@ darkToggle?.addEventListener('click', () => {
 })
 
 
-    zone.addEventListener("dragenter", e => {
-        if (e.dataTransfer?.types?.includes("Files")) {
-            dragCounter++;
-            zone.classList.add("drag-active");
-        }
-    });
+zone.addEventListener("dragenter", e => {
+    if (e.dataTransfer?.types?.includes("Files")) {
+        dragCounter++;
+        zone.classList.add("drag-active");
+    }
+});
 
-    zone.addEventListener("dragover", e => {
-        e.preventDefault();
-    });
+zone.addEventListener("dragover", e => {
+    e.preventDefault();
+});
 
-    zone.addEventListener("drop", e => {
-        e.preventDefault(); 
-        zone.classList.remove("drag-active"); 
-        console.log(e.dataTransfer)
-        const files = [...e.dataTransfer.files];
-        console.log("Dropped files:", files);
-    });
+zone.addEventListener("drop", e => {
+    e.preventDefault();
+    zone.classList.remove("drag-active");
+    console.log(e.dataTransfer)
+    const files = [...e.dataTransfer.files];
+    console.log("Dropped files:", files);
+});
 
 titleText = title.innerHTML.split('')
 title.innerHTML = '';
@@ -107,3 +107,12 @@ anchors.forEach(element => {
         element.classList.remove('text-black')
     })
 });
+
+
+text = `INSERT INTO users (id, name, email) VALUES
+        (1, 'Alice Johnson', 'alice@gmail.com'),
+        (2, 'Brian Smith', 'brian@yahoo.com'),
+        (3, 'Carol White', 'carol@outlook.com');
+        `
+
+document.querySelector('code').innerHTML = text;

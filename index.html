@@ -48,8 +48,7 @@
 
 
 
-        <!-- http://172.16.6.11:5500/ -->
-        <!-- http://127.0.0.1:3000/ -->
+        <!-- http://10.64.254.229:5500/ -->
         <div class="absolute top-0 right-0 translate-y-1/2 -translate-x-1/2">
             <button class="btn close-btn closebutton" data-hover>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -71,20 +70,25 @@
 
 
     <section id="particles-js"
-        class="h-screen w-screen absolute top-0 left-0 bg-neutral-900 flex flex-col items-center justify-center overflo">
+        class="h-screen w-screen absolute top-0 left-0 bg-neutral-900 flex  items-center justify-center gap-10 duration-300">
         <p class="jet text-5xl text-white text-center font-black title flex items-center justify-center absolute z-10">
             DBSeeder</p>
 
-        <textarea type="text" id="textinput"
-            class="showcontent-after bg-white/30 z-30 mt-3 px-30 py-15 min-w-fit h-auto rounded-xl"></textarea>
+        <div class="flex flex-col items-center justify-center max-w-[35vw] duration-300">
+            <textarea type="text" id="textinput"
+                class="showcontent-after bg-white/30 z-30 mt-3 px-30 py-15 min-w-fit h-auto rounded-xl"></textarea>
 
-        <p class="text-white text-xl showcontent-after line relative my-5">OR</p>
+            <p class="text-white text-xl showcontent-after line relative my-5">OR</p>
 
-        <div class="dragdrop-zone z-10 showcontent-after" data-dragdrop>Drop files here</div>
+            <div class="dragdrop-zone z-10 showcontent-after" data-dragdrop>Drop files here</div>
+        </div>
+
+
+        <div class="bg-neutral-600/50 showcontent-after px-12 py-10 ps-5 rounded-xl max-w-[65vw] z-10 text-white text-3xl duration-300">
+
+           <pre> <code class="py-10 px-20"></code></pre>
+        </div>
     </section>
-    <div>
-
-    </div>
 
     <div class="cursor z-50"></div>
     <script src="./src/localLibraries/gsap.min.js"></script>
