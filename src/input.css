@@ -29,10 +29,10 @@ ul {
 button {
 	outline: none;
 	border: none;
-	background: inherit;
-	color: currentcolor;
-	font-size: inherit;
-	font-family: inherit;
+	/* background: inherit; */
+	/* color: currentcolor; */
+	/* font-size: inherit; */
+	/* font-family: inherit; */
 	cursor: pointer;
 }
 
@@ -146,8 +146,8 @@ canvas{ /* DO NOT TOUCH, {DONT EVEN DARE TO} */
 }
 
   .dragdrop-zone {
-    width: 320px;
-    height: 180px;
+    width: 440px;
+    height: 240px;
     border: 2px dashed #6b7280;
     border-radius: 14px;
     display: grid;
