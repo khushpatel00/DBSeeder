@@ -121,25 +121,19 @@ document.querySelector('code').innerHTML = text;
 
 
 
-document.querySelector('.contact').addEventListener('mouseover', () => {
-    gsap.set('.contact-content', {})
-    gsap.to('.contact-content ul li', {
+document.querySelector('.credits').addEventListener('mouseover', () => {
+    gsap.to('.credits-content ul li', {
         opacity: 1,
         y: -20,
-        stagger: 0.1,
+        stagger: 0.08,
         delay: 0.1
-    })
-    gsap.to('.credits', { 
-        y: 100,
-        duration: 0.1,
-        ease: 'expo.in'
     })
 })
 document.querySelector('.menucontent').addEventListener('mouseleave', () => {
-    gsap.to('.contact-content ul li', {
+    gsap.to('.credits-content ul li', {
         opacity: 0,
         y: 0,
-        stagger: 0.1
+        stagger: 0.08
     })
     gsap.to('.credits', { 
         y: 0,
@@ -149,25 +143,3 @@ document.querySelector('.menucontent').addEventListener('mouseleave', () => {
     })
 })
 
-
-
-
-document.querySelector('.credits').addEventListener('mouseover', () => {
-    gsap.to('.credits-content ul li', {
-        opacity: 1,
-        y: -20,
-        stagger: 0.1
-    })
-    gsap.to('.contact-content ul li', {
-        opacity: 0,
-        y: 0,
-        stagger: 0.1
-    })   
-})
-document.querySelector('.menucontent').addEventListener('mouseleave', () => {
-    gsap.to('.credits-content ul li', {
-        opacity: 0,
-        y: 0,
-        stagger: 0.1
-    })
-})
