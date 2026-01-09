@@ -116,3 +116,12 @@ text = `INSERT INTO users (id, name, email) VALUES
         `
 
 document.querySelector('code').innerHTML = text;
+
+document.querySelector('.credits').addEventListener('mouseover', ()=>{
+    gsap.to('.credits-content ul li', {
+        opacity: 1,
+        y: -20,
+        stagger: 0.1 
+    })
+})
+// document.querySelector
