@@ -95,7 +95,7 @@ class Cursor {
 		gsap.utils.toArray("[data-hover]").forEach((hoverEl) => {
 			// set hover states
 			{
-				const hoverBoundsEl = hoverEl.querySelector("[dam fixeta-hover-bounds]");
+				const hoverBoundsEl = hoverEl.querySelector("[data-hover-bounds]");
 				hoverBoundsEl.addEventListener("pointerover", () => {
 					this.isHovered = true;
 					this.hoverEl = hoverBoundsEl;
