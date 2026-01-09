@@ -10,6 +10,7 @@ generate = document.querySelector('#generate');
 
 // global vars
 isDark = false;
+dragCounter = 0;
 
 // events
 darkToggle?.addEventListener('click', () => {
@@ -38,6 +39,16 @@ zone.addEventListener("drop", e => {
     console.log(e.dataTransfer)
     const files = [...e.dataTransfer.files];
     console.log("Dropped files:", files);
+
+    const first = files?.[0];
+    if (!first) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+        const textArea = document.getElementById('textinput');
+        if (textArea) textArea.value = String(reader.result || '');
+    };
+    reader.readAsText(first);
 });
 
 titleText = title.innerHTML.split('')
@@ -116,13 +127,10 @@ anchors.forEach(element => {
 });
 
 
-text = `INSERT INTO users (id, name, email) VALUES
-        (1, 'Alice Johnson', 'alice@gmail.com'),
-        (2, 'Brian Smith', 'brian@yahoo.com'),
-        (3, 'Carol White', 'carol@outlook.com');
-        `
-
-document.querySelector('code').innerHTML = text;
+const codeEl = document.querySelector('code');
+if (codeEl && !codeEl.textContent?.trim()) {
+    codeEl.textContent = "Your generated SQL will appear here.";
+}
 
 
 
