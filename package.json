@@ -9,6 +9,7 @@
     "@faker-js/faker": "^9.0.0",
     "@tailwindcss/cli": "^4.1.18",
     "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
     "express": "^5.0.0",
     "tailwindcss": "^4.1.18"
   }
