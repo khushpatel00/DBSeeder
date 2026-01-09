@@ -103,3 +103,21 @@ canvas{ /* DO NOT TOUCH, {DONT EVEN DARE TO} */
 	top: 0;
 	left: 0;
 }
+
+.anchors::before{
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 2px;
+	background-color: white;
+	left: -10%;
+	transition: 0.3s;
+	/* transform: translateX(-50%); */
+	z-index: -1;
+}
+.anchors:hover:before{
+	width: 125%;
+}
+.anchors{
+	mix-blend-mode: difference; 
+}

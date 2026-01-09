@@ -43,8 +43,13 @@
             </button>
         </div>
     </nav>
-    <div id="menu" class="bg-black hidden z-50 absolute w-screen h-screen top-0 left-0">
+    <div id="menu" class="bg-black hidden duration-150 z-50 absolute w-screen h-screen top-0 left-0 justify-center">
 
+
+
+
+        <!-- http://172.16.6.11:5500/ -->
+        <!-- http://127.0.0.1:3000/ -->
         <div class="absolute top-0 right-0 translate-y-1/2 -translate-x-1/2">
             <button class="btn close-btn closebutton" data-hover>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -56,20 +61,27 @@
                 <div data-hover-bounds></div>
             </button>
         </div>
+
+        <div class="text-white poppins text-4xl font-semibold flex flex-col items-center justify-center h-full gap-5">
+            <p class="relative anchors duration-300">HOME</p>
+            <p class="relative anchors duration-300">SCHEMAS</p>
+            <p class="relative anchors duration-300">CONTACT</p>
+        </div>
     </div>
 
 
     <section id="particles-js"
         class="h-screen w-screen absolute top-0 left-0 bg-neutral-900 flex flex-col items-center justify-center overflo">
-        <p class="jet text-5xl text-white text-center font-black title flex items-center justify-center absolute z-10">DBSeeder</p>
+        <p class="jet text-5xl text-white text-center font-black title flex items-center justify-center absolute z-10">
+            DBSeeder</p>
 
         <label id="drop-zone"
-            class="showcontent-after bg-white/50 px-10 py-20 rounded-2xl border border-dashed mt-5 z-30">
+            class="showcontent-after bg-white/50 px-10 py-20 rounded-2xl border border-dashed my-5 z-30">
             <p class="text-center translate-y-1/2 text-xl poppins font-light">Drop Your Schema here</p>
             <input type="file" name="" id="file-input" class="opacity-0">
         </label>
-        <label for="textinput">:</label>
-        <textarea type="text" id="textinput" class="bg-white/30 z-30 px-3 py-2 min-w-fit h-auto rounded-xl"></textarea>
+        <label for="textinput"></label>
+        <textarea type="text" id="textinput" class="showcontent-after bg-white/30 z-30 px-3 py-2 min-w-fit h-auto rounded-xl"></textarea>
     </section>
     <div>
 

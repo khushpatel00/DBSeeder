@@ -3,6 +3,7 @@ darkToggle = document.querySelector('#dark-toggle')
 title = document.querySelector('.title');
 menubtn = document.querySelector('.menubutton')
 closebutton = document.querySelector('.closebutton')
+anchors = document.querySelectorAll('.anchors'); 
 
 // global vars
 isDark = false;
@@ -38,8 +39,8 @@ gsap?.from('.title div', {
 })
 gsap?.to('.title div', {
     opacity: 0,
-    y: 20, 
-    delay: 0.15,
+    y: 20,  
+    // delay: 0.15,
     // scale: 0.5,
     stagger: 0.08, 
     duration: 0.5,
@@ -52,24 +53,28 @@ gsap?.set('.title', {scale: '1'})
 // })
 gsap?.to('.showcontent-after', {
     opacity: 1,
-    delay: 0.7,
+    delay: 1.8,
     stagger: 0.2
 })
 
 menubtn.addEventListener('click', ()=>{
     gsap.set('#menu', {display: 'flex'})
-    gsap.from('#menu', {
-        // opacity: 0,
-        x: '-100%',
-        duration: 0.5,
-        ease: 'power4.in'
+    gsap.to('#menu', {
+        opacity: 1
     })
 })
 closebutton.addEventListener('click', ()=>{
     gsap.to('#menu', {
-        // opacity: 0,
-        x: '-100%',
-        duration: 0.5
+        opacity: 0,
+        display: 'none'
     })
-    // setTimeout(gsap.set('#menu', {display: 'none'}), 5000)
 })
+
+anchors.forEach(element => {
+    element.addEventListener('mouseover', ()=>{
+        element.classList.add('text-black')
+    })
+    element.addEventListener('mouseleave', ()=>{
+        element.classList.remove('text-black')
+    })
+});
