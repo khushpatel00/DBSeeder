@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <!-- <link rel="shortcut icon" href="src/images/favicon.png" type="image/x-icon"> --> 
+    <!-- <link rel="shortcut icon" href="src/images/favicon.png" type="image/x-icon"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
@@ -21,15 +21,16 @@
 
 <body class="bg-white dark:bg-black duration-150 overflow-x-hidden">
 
-    
+
     <nav class="sticky showcontent-after z-40 top-0 w-screen px-5 pe-8 h-[5vh] flex items-center justify-between">
         <p class="text-white text-2xl jet">[icon]</p>
-        
-            <!-- <button id="dark-toggle"
+
+        <!-- <button id="dark-toggle"
                 class="tracking-tighter absolute top-0 right-0 bg-black/10 dark:bg-white/10 dark:text-white backdrop-blur-md  px-5 py-2 font-light text-lg m-3  rounded-lg jet opacity-0 ">
                 <i class="theme-icon-dark hidden ph ph-moon-stars"></i>
                 <i class="theme-icon-light ph ph-sun"></i>
             </button> -->
+
         <div class="flex">
             <button class="btn menu-btn menubutton" data-hover>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -44,25 +45,30 @@
     </nav>
     <div id="menu" class="bg-black hidden z-50 absolute w-screen h-screen top-0 left-0">
 
-        <button class="btn close-btn absolute top-0 right-0" data-hover>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-x">
-                <path d="M18 6 6 18" />
-                <path d="m6 6 12 12" />
-            </svg>
-            <div data-hover-bounds></div>
-        </button>
+        <div class="relative top-0 right-0">
+            <button class="btn close-btn" data-hover>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-x">
+                    <path d="M18 6 6 18" />
+                    <path d="m6 6 12 12" />
+                </svg>
+                <div data-hover-bounds></div>
+            </button>
+        </div>
 
     </div>
     <section id="particles-js"
         class="h-screen w-screen absolute top-0 left-0 bg-neutral-900 flex flex-col items-center justify-center overflo">
-        <p class="jet text-5xl text-center font-black title flex items-center justify-center absolute z-10">DBSeeder</p>
+        <p class="jet text-5xl text-white text-center font-black title flex items-center justify-center absolute z-10">DBSeeder</p>
 
-        <label id="drop-zone" class="showcontent-after bg-white/50 px-10 py-20 rounded-2xl border border-dashed mt-5 z-30">
+        <label id="drop-zone"
+            class="showcontent-after bg-white/50 px-10 py-20 rounded-2xl border border-dashed mt-5 z-30">
             <p class="text-center translate-y-1/2 text-xl poppins font-light">Drop Your Schema here</p>
             <input type="file" name="" id="file-input" class="opacity-0">
         </label>
+        <label for="textinput">: </label>
+        <input type="text" class="bg-white/30 z-30 px-3 py-2 rounded-xl">
     </section>
     <div>
 

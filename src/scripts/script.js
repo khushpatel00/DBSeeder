@@ -1,7 +1,7 @@
 // DOM Elements
 darkToggle = document.querySelector('#dark-toggle')
 title = document.querySelector('.title');
-manubtn = document.querySelector('.menubutton')
+menubtn = document.querySelector('.menubutton')
 
 // global vars
 isDark = false;
@@ -55,6 +55,10 @@ gsap?.to('.showcontent-after', {
     stagger: 0.2
 })
 
-// menubtn.addEventListener('click', ()=>{
+menubtn.addEventListener('click', ()=>{
+    gsap.to('#menu', {
+        opacity: 1,
+        display: 'flex',
 
-// })
+    })
+})
