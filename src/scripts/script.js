@@ -37,20 +37,26 @@ gsap?.from('.title div', {
     duration: 0.5,
     rotate: '-8'
 })
-gsap?.to('.title div', {
-    opacity: 0,
-    y: 20,  
-    // delay: 0.15,
-    // scale: 0.5,
-    stagger: 0.08, 
-    duration: 0.5,
-    rotate: '2'
-})
-gsap?.set('.title', {scale: '1'})
-// gsap?.to('.title', {
-//     display: 'none',
-//     delay: 3.5,
+gsap.to('.title', {scale: 1.2, duration: 1})
+// gsap?.to('.title div', {
+//     opacity: 0,
+//     y: 20,  
+//     // delay: 0.15,
+//     // scale: 0.5,
+//     stagger: 0.08, 
+//     duration: 0.5,
+//     rotate: '2'
 // })
+gsap?.to('.title div', {
+    delay: 1.5, 
+    duration: 0.5,
+    y: -250,
+    stagger: 0.01,
+})
+gsap.to('.title', {
+    scale: 1,
+    delay: 2.1, 
+})
 gsap?.to('.showcontent-after', {
     opacity: 1,
     delay: 1.8,

@@ -121,3 +121,25 @@ canvas{ /* DO NOT TOUCH, {DONT EVEN DARE TO} */
 .anchors{
 	mix-blend-mode: difference; 
 }
+.line::after{
+	position: absolute;
+	content: '';
+	height: 1px;
+	width: 20px;
+	top: 50%; 
+	transform: translate(50%, -50%);
+	right: -50%;
+
+	background-color: white;
+}
+.line::before{
+	position: absolute;
+	content: '';
+	height: 1px;
+	width: 20px;
+	top: 50%; 
+	transform: translate(-50%, -50%);
+	left: -50%;
+
+	background-color: white;
+}
