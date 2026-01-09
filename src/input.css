@@ -7,3 +7,7 @@
 .poppins{
     font-family: 'Poppins';
 }
+
+.title{
+    will-change: auto;
+}
