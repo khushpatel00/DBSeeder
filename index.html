@@ -13,12 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Mockseeder" />
-<link rel="manifest" href="/site.webmanifest" />
+
     <link rel="stylesheet" href="src/output.css"> <!--do not touch {dont even dare to} -->
     <link rel="stylesheet" href="src/phosphor.css"> <!--do not touch {dont even dare to} -->
 
@@ -50,8 +45,8 @@
     </nav>
     <div id="menu" class="bg-black hidden z-50 absolute w-screen h-screen top-0 left-0">
 
-        <div class="absolute top-0 right-0 ">
-            <button class="btn close-btn" data-hover>
+        <div class="absolute top-0 right-0 translate-y-1/2 -translate-x-1/2">
+            <button class="btn close-btn closebutton" data-hover>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-x">
@@ -74,7 +69,7 @@
             <input type="file" name="" id="file-input" class="opacity-0">
         </label>
         <label for="textinput">:</label>
-        <input type="text" class="bg-white/30 z-30 px-3 py-2 rounded-xl">
+        <textarea type="text" id="textinput" class="bg-white/30 z-30 px-3 py-2 min-w-fit h-auto rounded-xl"></textarea>
     </section>
     <div>
 
