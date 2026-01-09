@@ -1,0 +1,9 @@
+@config "../tailwind.config.js"; /* ignore the issue here */
+@import "tailwindcss";
+
+.jet{
+    font-family: 'JetBrains Mono';
+}
+.poppins{
+    font-family: 'Poppins';
+}
