@@ -33,7 +33,7 @@
         <div class="flex">
             <button class="btn menu-btn menubutton" data-hover>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="4" x2="20" y1="12" y2="12" />
                     <line x1="4" x2="20" y1="6" y2="6" />
                     <line x1="4" x2="20" y1="18" y2="18" />
@@ -56,10 +56,10 @@
 
     </div>
     <section id="particles-js"
-        class="h-screen w-screen absolute top-0 left-0 flex flex-col items-center justify-center overflo">
+        class="h-screen w-screen absolute top-0 left-0 bg-neutral-900 flex flex-col items-center justify-center overflo">
         <p class="jet text-5xl text-center font-black title flex items-center justify-center absolute z-10">DBSeeder</p>
 
-        <label id="drop-zone" class="showcontent-after bg-white/50 px-10 py-20 rounded-2xl border border-dashed mt-5">
+        <label id="drop-zone" class="showcontent-after bg-white/50 px-10 py-20 rounded-2xl border border-dashed mt-5 z-30">
             <p class="text-center translate-y-1/2 text-xl poppins font-light">Drop Your Schema here</p>
             <input type="file" name="" id="file-input" class="opacity-0">
         </label>
@@ -71,7 +71,7 @@
 
     <div class="cursor z-50"></div>
     <script src="./src/localLibraries/gsap.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
+    <script src="./src/localLibraries/particles.min.js"></script>
     <script src="src/scripts/fetch.js"></script>
     <script src="src/scripts/script.js"></script>
     <script type="module" src="src/scripts/hoverEffects.js"></script>

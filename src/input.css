@@ -98,3 +98,8 @@ main {
 	mix-blend-mode: difference; 
 	pointer-events: none;
 }
+canvas{ /* DO NOT TOUCH, {DONT EVEN DARE TO} */
+	position: absolute;
+	top: 0;
+	left: 0;
+}
