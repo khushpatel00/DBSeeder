@@ -5,8 +5,15 @@ async function generateWithAI() {
 
   if (!input || !outputEl || !btn) return;
 
-  const schema = input.value || '';
-  const rows = 1;
+  const API_BASE = window.location.origin;
+  const schema = (input.value || '').trim();
+  const rows = 5;
+
+  if (!schema) {
+    outputEl.textContent = 'Paste or drop a SQL schema first.';
+    input.focus();
+    return;
+  }
 
   btn.disabled = true;
   const originalText = btn.textContent;
@@ -14,22 +21,23 @@ async function generateWithAI() {
   outputEl.textContent = 'Generating...';
 
   try {
-    const res = await fetch('/generate-fake-data', {
+    const res = await fetch(`${API_BASE}/generate-fake-data`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ schema, rows })
+      body: JSON.stringify({ schema, rows, ai: false, dialect: 'postgres' })
     });
 
-    const data = await res.json();
-    if (!res.ok) {
-      const err = data?.error || JSON.stringify(data);
+    const contentType = res.headers.get('content-type') || '';
+    const raw = await res.text();
+    const data = contentType.includes('application/json') ? JSON.parse(raw) : null;
+
+    if (!res.ok || !data?.sql) {
+      const err = data?.error || raw?.slice(0, 200) || `HTTP ${res.status}`;
       outputEl.textContent = `Error: ${err}`;
-    } else if (data && data.sql) {
-      // Show generated SQL inline
-      outputEl.textContent = data.sql;
-    } else {
-      outputEl.textContent = JSON.stringify(data, null, 2);
+      return;
     }
+
+    outputEl.textContent = data.sql;
   } catch (e) {
     outputEl.textContent = `Request failed: ${e.message}`;
   } finally {

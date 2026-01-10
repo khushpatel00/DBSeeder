@@ -37,7 +37,4 @@ async function generateFakeSql() {
   }
 }
 
-document.getElementById("generateBtn")?.addEventListener("click", (e) => {
-  e.preventDefault();
-  generateFakeSql();
-});
+window.generateFakeSql = generateFakeSql;
