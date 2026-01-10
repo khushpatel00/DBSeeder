@@ -110,7 +110,7 @@ app.post("/generate-fake-data", (req, res) => {
 /* =========================
    START SERVER
 ========================= */
-const PORT = 3000;
+const PORT = 5050;
 app.listen(PORT, () => {
   console.log(`✅ Backend running on http://localhost:${PORT}`);
 });
