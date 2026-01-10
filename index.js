@@ -314,10 +314,22 @@ function generateFakeRow({ tableName, tableSchema, tables, generated, rowsSoFar 
     }
 
     if (cat === 'number') {
+      // Business logic: total_amount = (quantity_ml / 1000) * price_per_liter
+      if (lower === 'total_amount' && row['quantity_ml'] && row['price_per_liter']) {
+        row[colName] = Math.round((row['quantity_ml'] / 1000) * row['price_per_liter'] * 100) / 100;
+        continue;
+      }
+
       // Basic heuristics
-      if (lower.includes('price') || lower.includes('amount') || lower.includes('total')) {
+      if (lower.includes('price') || lower.includes('cost')) {
+        row[colName] = faker.number.int({ min: 50, max: 500 });
+      } else if (lower.includes('quantity') || lower.includes('volume')) {
+        row[colName] = faker.number.int({ min: 500, max: 5000 });
+      } else if (lower.includes('amount')) {
+        // For other amount fields not covered by total_amount calculation
         row[colName] = faker.number.int({ min: 10, max: 500 });
-      } else if (lower.endsWith('_id')) {
+      } else if (col.primaryKey || lower.endsWith('_id')) {
+        // Ensure unique IDs for primary keys and _id columns
         row[colName] = rowsSoFar + 1;
       } else {
         row[colName] = faker.number.int({ min: 1, max: 1000 });
@@ -354,6 +366,10 @@ async function fixSqlWithOpenAI({ schema, sql, dialect = 'postgres' }) {
     '- timestamp/date/time must be properly formatted strings',
     '- foreign keys must reference existing rows',
     '- payments.customer_name must match an existing customers.name when present',
+    '- Ensure NO DUPLICATE PRIMARY KEYS across rows',
+    '- Validate business logic: total_amount = (quantity_ml / 1000) * price_per_liter',
+    '- CRITICAL: All foreign key types must match their referenced primary key types (INT→INT, UUID→UUID)',
+    '- Ensure consistent ID types: if customers.id is INT, customer_id in other tables must also be INT (not UUID)',
     'Output ONLY SQL. No markdown. No explanations.',
     '--- SCHEMA ---',
     schema,
@@ -402,6 +418,14 @@ app.post("/generate-fake-data", (req, res) => {
     const tuples = [];
     for (let i = 0; i < rows; i++) {
       const rowObj = generateFakeRow({ tableName, tableSchema: table, tables, generated, rowsSoFar: i });
+      
+      // Validate business logic: total_amount = (quantity_ml / 1000) * price_per_liter
+      if (tableName.toLowerCase().includes('product') && rowObj['total_amount'] && 
+          rowObj['quantity_ml'] && rowObj['price_per_liter']) {
+        const calculated = Math.round((rowObj['quantity_ml'] / 1000) * rowObj['price_per_liter'] * 100) / 100;
+        rowObj['total_amount'] = calculated;
+      }
+      
       generated[tableName].push(rowObj);
 
       const values = table.columns.map(col => {
