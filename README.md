@@ -23,3 +23,7 @@ npm i
 ```
 npm start
 ```
+Or
+```
+npm start &
+```
