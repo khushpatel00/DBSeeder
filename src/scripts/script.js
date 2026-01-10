@@ -182,3 +182,21 @@ function copyContent() {
         document.querySelector('.copytext span').textContent = 'Copy'
     }, 3000)
 }
+function download(){
+    downloadFile(codeEl.textContent);
+}
+
+function downloadFile(content, type = "text/plain") {
+const downloadfilename = "DBSeeder.sql"; // hard default, no surprises
+  const blob = new Blob([content], { type: "application/sql" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = downloadfilename;
+  document.body.appendChild(a);
+  a.click();
+
+  URL.revokeObjectURL(url);
+  a.remove();
+}
