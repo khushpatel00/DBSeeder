@@ -6,14 +6,20 @@ This project phrases the database tables, and add mocked data, that can be utili
 
 To run this Project locally, open the main Branch in you IDE, or code editor and use this command
 
-```npm start```
+```
+npm start
+```
 
 
 
 if you encounter any issues while executing the command, remove the ```node_modules``` folder, and run this command
 
-``` npm i ```
+```
+npm i
+```
 
 & then
 
-```npm start```
+```
+npm start
+```
