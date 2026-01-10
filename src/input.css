@@ -1,23 +1,38 @@
-@config "../tailwind.config.js"; /* ignore the issue here */
+@config "../tailwind.config.js";
+/* ignore the issue here */
 @import "tailwindcss";
 
-.jet{
-    font-family: 'JetBrains Mono';
-}
-.poppins{
-    font-family: 'Poppins';
+.jet {
+	font-family: 'JetBrains Mono';
 }
 
-.title{
-    will-change: auto;
+.poppins {
+	font-family: 'Poppins';
 }
 
+.title {
+	will-change: auto;
+}
 
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+
+::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+	background: #FFFFFf;
+	border-radius: 43px;
+}
 
 :root {
 	--cursor-size: 24px;
 	--background: #f2f2f2;
 }
+
 a {
 	display: block;
 }
@@ -44,7 +59,7 @@ a {
 main {
 	height: 100%;
 
-	> div {
+	>div {
 		display: flex;
 		gap: 6rem;
 	}
@@ -95,16 +110,18 @@ main {
 	transform: translate(-50%, -50%);
 
 	background: var(--background);
-	mix-blend-mode: difference; 
+	mix-blend-mode: difference;
 	pointer-events: none;
 }
-canvas{ /* DO NOT TOUCH, {DONT EVEN DARE TO} */
+
+canvas {
+	/* DO NOT TOUCH, {DONT EVEN DARE TO} */
 	position: absolute;
 	top: 0;
 	left: 0;
 }
 
-.anchors::before{
+.anchors::before {
 	position: absolute;
 	content: '';
 	height: 100%;
@@ -115,52 +132,56 @@ canvas{ /* DO NOT TOUCH, {DONT EVEN DARE TO} */
 	/* transform: translateX(-50%); */
 	z-index: -1;
 }
-.anchors:hover:before{
+
+.anchors:hover:before {
 	width: 125%;
 }
-.anchors{
-	mix-blend-mode: difference; 
+
+.anchors {
+	mix-blend-mode: difference;
 	margin: 20px 0;
 }
-.line::after{
+
+.line::after {
 	position: absolute;
 	content: '';
 	height: 1px;
 	width: 20px;
-	top: 50%; 
+	top: 50%;
 	transform: translate(50%, -50%);
 	right: -50%;
 
 	background-color: white;
 }
-.line::before{
+
+.line::before {
 	position: absolute;
 	content: '';
 	height: 1px;
 	width: 20px;
-	top: 50%; 
+	top: 50%;
 	transform: translate(-50%, -50%);
 	left: -50%;
 
 	background-color: white;
 }
 
-  .dragdrop-zone {
-    width: 440px;
-    height: 240px;
-    border: 2px dashed #6b7280;
-    border-radius: 14px;
-    display: grid;
-    place-items: center;
-    font-family: system-ui, sans-serif;
-    color: #9ca3af;
-    transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
-    background: rgba(255, 255, 255, 0.02);
-  }
+.dragdrop-zone {
+	width: 440px;
+	height: 240px;
+	border: 2px dashed #6b7280;
+	border-radius: 14px;
+	display: grid;
+	place-items: center;
+	font-family: system-ui, sans-serif;
+	color: #9ca3af;
+	transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+	background: rgba(255, 255, 255, 0.02);
+}
 
-  .dragdrop-zone.drag-active {
-    transform: scale(1.06);
-    border-color: #6366f1;
-    background: rgba(99, 102, 241, 0.08);
-    color: #c7d2fe;
-  }
+.dragdrop-zone.drag-active {
+	transform: scale(1.06);
+	border-color: #6366f1;
+	background: rgba(99, 102, 241, 0.08);
+	color: #c7d2fe;
+}
