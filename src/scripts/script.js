@@ -130,7 +130,7 @@ closebutton.addEventListener('click', () => {
         display: 'none'
     })
 })
-function closemenu(){
+function closemenu() {
     gsap.to('#menu', {
         opacity: 0,
         display: 'none'
@@ -166,7 +166,7 @@ document.querySelector('.menucontent').addEventListener('mouseleave', () => {
         y: 0,
         stagger: 0.08
     })
-    gsap.to('.credits', { 
+    gsap.to('.credits', {
         y: 0,
         duration: 0.1,
         ease: 'expo.out',
@@ -174,3 +174,11 @@ document.querySelector('.menucontent').addEventListener('mouseleave', () => {
     })
 })
 
+function copyContent() {
+    navigator?.clipboard?.writeText(codeEl.textContent)
+    console.log(codeEl.textContent)
+    document.querySelector('.copytext span').textContent = 'Copied'
+    setTimeout(() => {
+        document.querySelector('.copytext span').textContent = 'Copy'
+    }, 3000)
+}
